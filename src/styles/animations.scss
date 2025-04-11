@@ -1,0 +1,136 @@
+// 滚动动画样式
+
+// 初始状态 - 元素不可见
+.scroll-animate-initial {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: none;
+  will-change: opacity, transform;
+}
+
+// 进入状态 - 向下滚动时元素出现
+.scroll-animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+// 离开状态 - 向上滚动时元素消失
+.scroll-animate-out {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease-in, transform 0.6s ease-in;
+}
+
+// 错开动画进入效果
+.stagger-animate-initial {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.stagger-animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+// 针对不同元素的自定义滚动动画
+.scroll-animate {
+  &.fade-up {
+    &.scroll-animate-initial {
+      opacity: 0;
+      transform: translateY(70px);
+    }
+    
+    &.scroll-animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    &.scroll-animate-out {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
+  
+  &.fade-left {
+    &.scroll-animate-initial {
+      opacity: 0;
+      transform: translateX(-70px);
+    }
+    
+    &.scroll-animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    &.scroll-animate-out {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+  
+  &.fade-right {
+    &.scroll-animate-initial {
+      opacity: 0;
+      transform: translateX(70px);
+    }
+    
+    &.scroll-animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    &.scroll-animate-out {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+  }
+  
+  &.scale-up {
+    &.scroll-animate-initial {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    
+    &.scroll-animate-in {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    &.scroll-animate-out {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+  }
+  
+  // 自定义动画速度类
+  &.animate-fast {
+    &.scroll-animate-in {
+      transition-duration: 0.5s;
+    }
+    
+    &.scroll-animate-out {
+      transition-duration: 0.4s;
+    }
+  }
+  
+  &.animate-slow {
+    &.scroll-animate-in {
+      transition-duration: 1.2s;
+    }
+    
+    &.scroll-animate-out {
+      transition-duration: 0.8s;
+    }
+  }
+  
+  // 自定义延迟类
+  @for $i from 1 through 10 {
+    &.delay-#{$i} {
+      &.scroll-animate-in {
+        transition-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+}
