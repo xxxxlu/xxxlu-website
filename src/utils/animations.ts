@@ -1,18 +1,11 @@
-// 滚动动画工具类
+/**
+ * 动画相关工具函数
+ */
+import { isHomePage } from './domUtils';
 
 // 定义动画控制器接口
 export interface AnimationController {
   disconnect: () => void;
-}
-
-/**
- * 检测当前是否在首页
- */
-function isHomePage(): boolean {
-  if (typeof window === 'undefined') return false;
-  return window.location.pathname === '/' || 
-         window.location.pathname === '/index.html' || 
-         window.location.pathname === '';
 }
 
 /**

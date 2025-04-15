@@ -1,8 +1,8 @@
 export default {
-  country: 'UK',
+  country: 'USA',
   hero: {
     title: 'Welcome to My Portfolio',
-    description: 'I am a creative developer crafting exceptional digital experiences.',
+    description: 'I am a creative developer building amazing digital experiences.',
     buttons: {
       contact: 'Contact Me',
       projects: 'View Projects'
@@ -10,7 +10,22 @@ export default {
   },
   about: {
     title: 'About Me',
-    description: 'I am a passionate developer with experience in building user-friendly interfaces and robust applications. I enjoy solving complex problems and continuously learning new technologies.'
+    description: 'I am a passionate developer with experience in creating user-friendly interfaces and robust applications. I love solving complex problems and continuously learning new technologies.',
+    greeting: 'Hi, I\'m',
+    name: 'John Doe',
+    jobTitle: 'Frontend Developer & UI/UX Designer',
+    bio1: 'I am a passionate frontend developer with 3 years of experience. I love exploring new technologies and always strive to create exceptional user experiences.',
+    bio2: 'My goal is to combine creative design with cutting-edge technology to build fluid, practical, and powerful web applications.',
+    learnMore: 'Learn More',
+    stats: {
+      years: 'Years Experience',
+      projects: 'Projects',
+      clients: 'Clients'
+    },
+    buttons: {
+      more: 'Learn More',
+      contact: 'Contact Me'
+    }
   },
   skills: {
     title: 'My Skills',
@@ -21,13 +36,14 @@ export default {
   projects: {
     title: 'Projects',
     viewProject: 'View Project',
+    viewAll: 'View All',
     projectOne: {
       title: 'Project One',
-      description: 'A brilliant project showcasing my technical abilities and creative thinking.'
+      description: 'An amazing project showcasing my technical abilities and creative thinking.'
     },
     projectTwo: {
       title: 'Project Two',
-      description: 'A challenging project where I tackled complex problems and implemented innovative solutions.'
+      description: 'A challenging project where I solved complex problems and implemented innovative solutions.'
     },
     projectThree: {
       title: 'Project Three',

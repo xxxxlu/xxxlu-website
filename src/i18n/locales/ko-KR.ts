@@ -16,6 +16,7 @@ export default {
     jobTitle: '프론트엔드 개발자 & UI/UX 디자이너',
     bio1: '저는 3년의 경험을 가진 열정적인 프론트엔드 개발자입니다. 새로운 기술을 탐구하고 항상 탁월한 사용자 경험을 만들기 위해 노력합니다.',
     bio2: '저의 목표는 창의적인 디자인과 최신 기술을 결합하여 유연하고 실용적이며 강력한 웹 애플리케이션을 구축하는 것입니다.',
+    learnMore: '더 알아보기',
     stats: {
       years: '년 경력',
       projects: '프로젝트',
@@ -35,6 +36,7 @@ export default {
   projects: {
     title: '프로젝트',
     viewProject: '프로젝트 보기',
+    viewAll: '모든 프로젝트 보기',
     projectOne: {
       title: '프로젝트 하나',
       description: '제 기술적 능력과 창의적 사고를 보여주는 놀라운 프로젝트입니다.'

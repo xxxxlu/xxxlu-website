@@ -1,0 +1,29 @@
+// 颜色变量
+:root {
+  // 主色调
+  --primary-color: #007cf0;
+  --primary-light: #00bcd4;
+  --primary-dark: #0052a2;
+  --primary-gradient: linear-gradient(90deg, #007cf0, #00dfd8);
+  
+  // 界面色
+  --bg-color: #0d1117;
+  --bg-alt-color: #161b22;
+  --text-color: #f0f6fc;
+  --text-muted: #8b949e;
+  --border-color: #30363d;
+  
+  // 辅助色
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --info-color: #3498db;
+}
+
+// 断点变量
+$breakpoints: (
+  'mobile': 767px,
+  'tablet': 991px,
+  'desktop': 1199px,
+  'large': 1399px
+);

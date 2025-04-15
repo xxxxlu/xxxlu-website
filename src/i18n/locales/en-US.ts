@@ -16,6 +16,7 @@ export default {
     jobTitle: 'Frontend Developer & UI/UX Designer',
     bio1: 'I am a passionate frontend developer with 3 years of experience. I love exploring new technologies and always strive to create exceptional user experiences.',
     bio2: 'My goal is to combine creative design with cutting-edge technology to build fluid, practical, and powerful web applications.',
+    learnMore: 'Learn More',
     stats: {
       years: 'Years Experience',
       projects: 'Projects',
@@ -35,6 +36,7 @@ export default {
   projects: {
     title: 'Projects',
     viewProject: 'View Project',
+    viewAll: 'View All',
     projectOne: {
       title: 'Project One',
       description: 'An amazing project showcasing my technical abilities and creative thinking.'

@@ -1,0 +1,37 @@
+// 引入变量
+@use '../abstract/variables' as vars;
+@use '../abstract/mixins' as mix;
+
+/* 按钮样式组件 */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  @include mix.transition(all, 0.3s, ease);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  
+  &.btn-primary {
+    @include mix.gradient-bg(to right, #007cf0, #00dfd8);
+    color: white;
+    border: none;
+    
+    &:hover {
+      transform: translateY(-2px);
+      @include mix.box-shadow(3);
+    }
+  }
+  
+  &.btn-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+/**
+ * 主样式文件 - 组织所有模块
+ */
+
+// 抽象部分 - 变量和混合宏
+@use './abstract/variables' as var;
+@use './abstract/mixins' as mix;
+
+// 基础样式
+@use './base/reset';
+@use './base/typography';
+
+// 布局组件
+@use './layout/container';
+
+// UI组件
+@use './components/buttons';
+@use './components/grid';
+
+// 动画
+@use './animations/scroll-animations';
+@use './animations/stagger-animations';
+
+// 页面特定样式可以在这里引入
+// @use './pages/home';
+// @use './pages/about';
+// @use './pages/contact';

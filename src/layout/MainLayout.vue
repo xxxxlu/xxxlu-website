@@ -15,7 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import { initScrollAnimations, initStaggerAnimation, AnimationController } from '@/utils/scrollAnimation';
 import Header from '@/layout/components/Header.vue';
 import Footer from '@/layout/components/Footer.vue';
@@ -26,13 +27,35 @@ useTheme();
 
 let scrollObserver: AnimationController | undefined;
 let staggerObserver: AnimationController | undefined;
+const route = useRoute();
 
-// 在组件挂载后初始化滚动动画
-onMounted(() => {
-  // 初始化主要的滚动动画
-  scrollObserver = initScrollAnimations();
+// 判断是否是首页
+const isHomePage = () => {
+  return route.path === '/' || route.path === '/index.html' || route.path === '';
+};
+
+// 初始化滚动动画
+const initAnimations = () => {
+  // 清理之前的观察者
+  cleanupObservers();
   
-  // 错开动画（每个元素依次出现）
+  // 在非首页，立即显示所有动画元素，但不初始化动画
+  if (!isHomePage()) {
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+      el.classList.remove('scroll-animate-initial', 'scroll-animate-out');
+      el.classList.add('scroll-animate-in');
+    });
+    
+    document.querySelectorAll('.stagger-parent .stagger-item').forEach(el => {
+      el.classList.remove('stagger-animate-initial');
+      el.classList.add('stagger-animate-in');
+    });
+    
+    return;
+  }
+  
+  // 只在首页初始化动画
+  scrollObserver = initScrollAnimations();
   staggerObserver = initStaggerAnimation('.stagger-parent', '.stagger-item', 100);
   
   // 兼容旧的动画类，将reveal-section转换为scroll-animate
@@ -41,17 +64,32 @@ onMounted(() => {
     el.classList.add('scroll-animate');
     el.classList.add('fade-up');
   });
-});
+};
 
 // 清理观察者
-onUnmounted(() => {
+const cleanupObservers = () => {
   if (scrollObserver) {
     scrollObserver.disconnect();
+    scrollObserver = undefined;
   }
   if (staggerObserver) {
     staggerObserver.disconnect();
+    staggerObserver = undefined;
   }
+};
+
+// 在组件挂载后初始化动画
+onMounted(() => {
+  initAnimations();
+  
+  // 路由变化时重新初始化动画
+  watch(() => route.path, () => {
+    initAnimations();
+  });
 });
+
+// 组件卸载时清理观察者
+onUnmounted(cleanupObservers);
 </script>
 
 <style lang="scss">

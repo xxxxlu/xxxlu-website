@@ -74,7 +74,7 @@ const projects = ref([
 </template>
 
 <style scoped lang="scss">
-@use '../../styles/minxin.scss' as *;
+@use '@/styles/index.scss' as *;
 
 .projects-page {
   color: #fff;

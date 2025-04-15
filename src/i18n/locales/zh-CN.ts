@@ -16,6 +16,7 @@ export default {
     jobTitle: '前端工程师 & UI/UX设计师',
     bio1: '我是一名热爱创造的前端开发者，拥有三年的前端开发经验。我喜欢探索新技术，并且始终致力于创造卓越的用户体验。',
     bio2: '我的目标是结合创意设计和前沿技术，打造流畅、实用且具有强大功能的Web应用程序。',
+    learnMore: '了解更多',
     stats: {
       years: '年经验',
       projects: '个项目',
@@ -35,6 +36,7 @@ export default {
   projects: {
     title: '项目',
     viewProject: '查看项目',
+    viewAll: '查看所有项目',
     projectOne: {
       title: '项目一',
       description: '一个令人惊叹的项目，展示了我的技术能力和创意思维。'

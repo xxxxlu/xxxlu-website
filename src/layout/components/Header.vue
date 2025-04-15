@@ -5,10 +5,10 @@
         <router-link to="/">Your Logo</router-link>
       </div>
       <nav class="nav">
-        <router-link to="/" class="nav-link">{{ $t('nav.home') }}</router-link>
-        <router-link to="/about" class="nav-link">{{ $t('nav.about') }}</router-link>
-        <router-link to="/projects" class="nav-link">{{ $t('nav.projects') }}</router-link>
-        <router-link to="/contact" class="nav-link">{{ $t('nav.contact') }}</router-link>
+        <router-link to="/" class="nav-link" exact-active-class="router-link-exact-active">{{ $t('nav.home') }}</router-link>
+        <router-link to="/about" class="nav-link" exact-active-class="router-link-exact-active">{{ $t('nav.about') }}</router-link>
+        <router-link to="/projects" class="nav-link" exact-active-class="router-link-exact-active">{{ $t('nav.projects') }}</router-link>
+        <router-link to="/contact" class="nav-link" exact-active-class="router-link-exact-active">{{ $t('nav.contact') }}</router-link>
         <CountrySelector class="country-selector-nav" />
       </nav>
     </div>
@@ -17,7 +17,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 import CountrySelector from '@/components/CountrySelector.vue';
+
+const route = useRoute()
 
 // 管理滚动透明效果
 const isScrolled = ref(false);
@@ -118,7 +121,7 @@ onUnmounted(() => {
       }
       
       &:hover,
-      &.router-link-active {
+      &.router-link-exact-active {
         color: var(--primary-color);
         
         .header.transparent & {
@@ -126,7 +129,7 @@ onUnmounted(() => {
         }
       }
       
-      &.router-link-active::after {
+      &.router-link-exact-active::after {
         content: '';
         position: absolute;
         bottom: -6px;

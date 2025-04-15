@@ -72,7 +72,7 @@
 </template>
 
 <style scoped lang="scss">
-@use '@/styles/minxin.scss' as *;
+@use '@/styles/index.scss' as *;
 
 .about-page {
   color: #fff;

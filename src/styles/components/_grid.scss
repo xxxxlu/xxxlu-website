@@ -1,0 +1,35 @@
+// 引入混合宏
+@use '../abstract/mixins' as mix;
+
+/* 网格系统 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  
+  @include mix.responsive(mobile) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* 弹性布局助手类 */
+.flex {
+  display: flex;
+  
+  &.flex-center {
+    @include mix.flex(row, center, center);
+  }
+  
+  &.flex-between {
+    justify-content: space-between;
+  }
+  
+  &.flex-column {
+    flex-direction: column;
+  }
+  
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+}

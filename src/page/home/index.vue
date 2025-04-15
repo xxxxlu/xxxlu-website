@@ -133,6 +133,7 @@ onMounted(() => {
     <!-- 幕布效果的第一屏 -->
     <section class="curtain-section" ref="curtainSection">
       <div class="curtain-content">
+        <div class="curtain-backdrop"></div>
         <h1 class="hero-title">{{ $t('hero.title') }}</h1>
         <p class="hero-description">{{ $t('hero.description') }}</p>
         <div class="hero-buttons">
@@ -142,7 +143,6 @@ onMounted(() => {
       </div>
       <!-- 滚动指示器 -->
       <div class="scroll-indicator">
-        <span>{{ $t('scrollIndicator') }}</span>
         <div class="arrow-down"></div>
       </div>
     </section>

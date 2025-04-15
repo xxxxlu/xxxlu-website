@@ -32,11 +32,11 @@ interface ThemeColors {
 
 // 国家名称映射表
 export const countryNames: Record<CountryCode, string> = {
-  us: '美国',
-  uk: '英国',
-  cn: '中国',
-  kr: '韩国',
-  fr: '法国'
+  us: 'USA',
+  uk: 'UK',
+  cn: 'China',
+  kr: 'Korea',
+  fr: 'France'
 };
 
 // 国家图标映射表 (使用国旗emoji)

@@ -16,7 +16,7 @@
 </template>
 
 <style scoped lang="scss">
-@use '../../styles/minxin.scss' as *;
+@use '@/styles/index.scss' as *;
 
 .not-found-page {
   min-height: 100vh;
